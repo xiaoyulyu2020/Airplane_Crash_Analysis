@@ -1,1 +1,1 @@
-Python project for begainer
+Python projects for begainer
