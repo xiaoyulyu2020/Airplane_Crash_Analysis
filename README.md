@@ -1,1 +1,1 @@
-Python projects for begainer
+Python projects for beginner
