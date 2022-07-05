@@ -4,39 +4,47 @@ import ReactDom from 'react-dom'
 //css
 import './index.css'
 
+const firstbook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL302_SR302,200_.jpg',
+  title: 'I Love You to the Moon and Back',
+  author: 'Amelia Hepworth',
+}
+
+const secbook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/91HHxxtA1wL._AC_UL302_SR302,200_.jpg',
+  title: 'The Wonderful Things You Will',
+  author: 'Emilly Winfield Martin',
+}
+
 function Booklist() {
   return (
     <section className='bookList'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        img={firstbook.img}
+        title={firstbook.title}
+        author={firstbook.author}
+      >
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
+          doloremque sint nesciunt, iusto sunt voluptatibus itaque excepturi
+          aliquam quidem ipsum?
+        </p>
+      </Book>
+
+      <Book img={secbook.img} title={secbook.title} author={secbook.author} />
     </section>
   )
 }
 
-const Book = () => {
+const Book = ({ img, title, author, children }) => {
   return (
     <article className='book'>
-      <Image></Image>
-      <Author />
-      <Detail />
+      <img src={img} alt='' />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      {children}
     </article>
   )
 }
-
-const Image = () => (
-  <img src='https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL302_SR302,200_.jpg' />
-)
-
-const Author = () => <h1>Jenny Han</h1>
-const Detail = () => (
-  <h4 style={{ color: '#617d68', fontsize: '0.75 rem', marginTop: '0.25rem' }}>
-    This book is from azmazon
-  </h4>
-)
 
 ReactDom.render(<Booklist />, document.getElementById('root'))
