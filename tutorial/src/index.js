@@ -46,7 +46,12 @@ const moreDetail = (author) => {
 function Book(props) {
   const { img, title, author } = props
   return (
-    <article className='book' onMouseOver={() => {}}>
+    <article
+      className='book'
+      onMouseOver={() => {
+        console.log(title)
+      }}
+    >
       <img src={img} alt='' />
       <h1 onClick={() => alert("Don't touch me!")}>{title}</h1>
       <h4>{author}</h4>
